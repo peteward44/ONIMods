@@ -20,6 +20,13 @@ public static class Patches
 
 			int categoryIndex = TUNING.BUILDINGS.PLANORDER.FindIndex(x => x.category == "Food");
 			(TUNING.BUILDINGS.PLANORDER[categoryIndex].data as IList<String>)?.Add(WildPlanterBoxConfig.ID);
+
+			Strings.Add($"STRINGS.BUILDINGS.PREFABS.{WildFarmTileConfig.ID.ToUpperInvariant()}.NAME", "<link=\"" + WildFarmTileConfig.ID + "\">" + WildFarmTileConfig.Name + "</link>");
+			Strings.Add($"STRINGS.BUILDINGS.PREFABS.{WildFarmTileConfig.ID.ToUpperInvariant()}.DESC", WildFarmTileConfig.Description);
+			Strings.Add($"STRINGS.BUILDINGS.PREFABS.{WildFarmTileConfig.ID.ToUpperInvariant()}.EFFECT", WildFarmTileConfig.Effect);
+
+			int categoryIndex2 = TUNING.BUILDINGS.PLANORDER.FindIndex(x => x.category == "Food");
+			(TUNING.BUILDINGS.PLANORDER[categoryIndex2].data as IList<String>)?.Add(WildFarmTileConfig.ID);
 		}
 	}
 
@@ -29,6 +36,7 @@ public static class Patches
 		public static void Postfix()
 		{
 			Db.Get().Techs.Get("Agriculture").unlockedItemIDs.Add(WildPlanterBoxConfig.ID);
+			Db.Get().Techs.Get("Agriculture").unlockedItemIDs.Add(WildFarmTileConfig.ID);
 		}
 	}
 
@@ -42,7 +50,8 @@ public static class Patches
 		{
 			var plantablePlot = __instance.GetReceptacle();
 			WildPlanterBox box = null;
-			if ( plantablePlot.TryGetComponent<WildPlanterBox>( out box ) )
+			WildFarmTile tile = null;
+			if ( plantablePlot.TryGetComponent<WildPlanterBox>( out box ) || plantablePlot.TryGetComponent<WildFarmTile>(out tile))
 			{
 				// turn off "replanted" flag which is used by the room constraints to count wild plants
 				replanted(__instance) = false;
