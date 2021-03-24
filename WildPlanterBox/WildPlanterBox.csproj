@@ -65,9 +65,10 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y /R /Q /I /E "$(ProjectDir)\target" "$(ProjectDir)\release"
+    <PostBuildEvent>xcopy /Y /R /Q /I /E "$(ProjectDir)target\*" "$(ProjectDir)release\"
 xcopy /Y /R /Q /S "$(TargetPath)" "$(ProjectDir)\release\"
-xcopy /Y /R /Q /I /E "$(ProjectDir)\release" "%25USERPROFILE%25\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)"
+rd /S /Q "%25USERPROFILE%25\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)"
+xcopy /Y /R /Q /I /E "$(ProjectDir)release" "%25USERPROFILE%25\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)"
 
 rem ilmerge /wildcards /out:$(TargetName)-merged.dll $(TargetName).dll $(ProjectDir)vendor\*.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319
 </PostBuildEvent>

@@ -8,6 +8,4 @@ This is a [b]"Spaced Out" DLC ONLY[/b] mod
 
 Please thumbs up & favorite this so others can find it more easily!
 
-[b]NOTE[/b]: There is a known issue with growing Arbor Trees in them. A fix is being worked on, thanks for your patience
-
 You can [url=https://github.com/peteward44/ONIMods/] contribute to development of my mods here [/url]
