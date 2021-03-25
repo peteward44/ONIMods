@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spacedout", "spacedout\spacedout.csproj", "{8E64342A-9354-4A75-8119-B861A8BDA10A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{136C7489-11BC-4D69-93B9-1614C3D3DCDB} = {136C7489-11BC-4D69-93B9-1614C3D3DCDB}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "base", "base\base.csproj", "{136C7489-11BC-4D69-93B9-1614C3D3DCDB}"
 EndProject
