@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E64342A-9354-4A75-8119-B861A8BDA10A}</ProjectGuid>
+    <ProjectGuid>{136C7489-11BC-4D69-93B9-1614C3D3DCDB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WildPlanterBox</RootNamespace>
@@ -33,13 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>dlls\0Harmony.dll</HintPath>
+      <HintPath>..\..\common\dlls\spacedout\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>dlls\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\common\dlls\spacedout\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>dlls\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\..\common\dlls\spacedout\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,10 +48,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>dlls\UnityEngine.dll</HintPath>
+      <HintPath>..\..\common\dlls\spacedout\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>dlls\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\common\dlls\spacedout\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -65,12 +65,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y /R /Q /I /E "$(ProjectDir)target\*" "$(ProjectDir)release\"
-xcopy /Y /R /Q /S "$(TargetPath)" "$(ProjectDir)\release\"
-rd /S /Q "%25USERPROFILE%25\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)"
-xcopy /Y /R /Q /I /E "$(ProjectDir)release" "%25USERPROFILE%25\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)"
-
-rem ilmerge /wildcards /out:$(TargetName)-merged.dll $(TargetName).dll $(ProjectDir)vendor\*.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319
+    <PostBuildEvent>"$(SolutionDir)..\common\post-build.cmd" "$(SolutionDir)" "$(ProjectDir)" "$(TargetPath)" "archived_versions\base"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
