@@ -65,8 +65,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)..\common\post-build.cmd" "$(SolutionDir)" "$(ProjectDir)" "$(TargetPath)"
-"$(SolutionDir)..\common\deploy.cmd" "$(SolutionName)" "$(SolutionDir)"
+    <PostBuildEvent>call "$(SolutionDir)..\common\post-build.cmd" "$(SolutionDir)" "$(ProjectDir)" "$(TargetPath)"
+call "$(SolutionDir)..\common\deploy.cmd" "$(SolutionName)" "$(SolutionDir)"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

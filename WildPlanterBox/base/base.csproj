@@ -33,13 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\common\dlls\spacedout\0Harmony.dll</HintPath>
+      <HintPath>..\..\common\dlls\base\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\common\dlls\spacedout\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\common\dlls\base\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\common\dlls\spacedout\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\..\common\dlls\base\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,10 +48,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\common\dlls\spacedout\UnityEngine.dll</HintPath>
+      <HintPath>..\..\common\dlls\base\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\common\dlls\spacedout\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\common\dlls\base\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -65,7 +65,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)..\common\post-build.cmd" "$(SolutionDir)" "$(ProjectDir)" "$(TargetPath)" "archived_versions\base"
+    <PostBuildEvent>call "$(SolutionDir)..\common\post-build.cmd" "$(SolutionDir)" "$(ProjectDir)" "$(TargetPath)" "archived_versions\base"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

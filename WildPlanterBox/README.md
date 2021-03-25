@@ -4,7 +4,7 @@ Adds a new planter box that simulates wild conditions. Any plants planted in the
 
 For balance, they require a [b]30w[/b] power supply and emit [b]250 DTU/s[/b] (about half of what a ceiling light emits)
 
-This is a [b]"Spaced Out" DLC ONLY[/b] mod - Base game support coming soon!
+This mod supports both [b]vanilla base game[/b] and the [b]"Spaced Out" DLC[/b]
 
 Please thumbs up & favorite this so others can find it more easily!
 [img=https://i.imgur.com/p7Fv1Z6.gif][/img]

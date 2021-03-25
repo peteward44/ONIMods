@@ -88,8 +88,8 @@ public static class Patches
 	{
 		public static void Postfix()
 		{
-			Db.Get().Techs.Get("Agriculture").unlockedItemIDs.Add(WildPlanterBoxConfig.ID);
-			Db.Get().Techs.Get("Agriculture").unlockedItemIDs.Add(WildFarmTileConfig.ID);
+			var techList = new List<string>(Database.Techs.TECH_GROUPING["Agriculture"]) { WildPlanterBoxConfig.ID, WildFarmTileConfig.ID };
+			Database.Techs.TECH_GROUPING["Agriculture"] = techList.ToArray();
 		}
 	}
 }
