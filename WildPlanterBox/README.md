@@ -4,8 +4,10 @@ Adds a new planter box that simulates wild conditions. Any plants planted in the
 
 For balance, they require a [b]30w[/b] power supply and emit [b]250 DTU/s[/b] (about half of what a ceiling light emits)
 
-This is a [b]"Spaced Out" DLC ONLY[/b] mod
+This is a [b]"Spaced Out" DLC ONLY[/b] mod - Base game support coming soon!
 
 Please thumbs up & favorite this so others can find it more easily!
+[img=https://i.imgur.com/p7Fv1Z6.gif][/img]
 
-You can [url=https://github.com/peteward44/ONIMods/] contribute to development of my mods here [/url]
+[h2]GitHub[/h2]
+If the mod crashes your game, please open an issue on my GitHub and provide logs from the game so I could search for the source of the problem. You can also use it for local download and to access source files. You can find it [url=https://github.com/peteward44/ONIMods/]here[/url]
