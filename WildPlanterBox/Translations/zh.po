@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#.  WildFarmTileConfig.ID
+msgctxt "WildFarmTileConfig.ID."
+msgid "WildFarmTile"
+msgstr "人工野生土培砖"
+
+#.  WildFarmTileConfig.Name
+msgctxt "WildFarmTileConfig.Name."
+msgid "Wild Farm Tile"
+msgstr "人工野生土培砖"
+
+#.  WildFarmTileConfig.Description
+msgctxt "WildFarmTileConfig.Description."
+msgid "Tile that simulates wild conditions for plants"
+msgstr "模拟植物野生条件的土培砖"
+
+#.  WildFarmTileConfig.Effect
+msgctxt "WildFarmTileConfig.Effect."
+msgid "Allows duplicants to plant a wild plant from a seed"
+msgstr "允许复制人用种子种植野生植物"
