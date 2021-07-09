@@ -7,8 +7,8 @@
     <ProjectGuid>{136C7489-11BC-4D69-93B9-1614C3D3DCDB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WildPlanterBox</RootNamespace>
-    <AssemblyName>WildPlanterBox</AssemblyName>
+    <RootNamespace>PickableVacillatorTrait</RootNamespace>
+    <AssemblyName>PickableVacillatorTrait</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

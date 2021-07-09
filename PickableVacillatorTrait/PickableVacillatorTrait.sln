@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spacedout", "spacedout\spac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "base", "base\base.csproj", "{136C7489-11BC-4D69-93B9-1614C3D3DCDB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PLib", "..\common\PLib\PLib.csproj", "{A0602015-3537-4845-B201-7C4B2C03AECC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{136C7489-11BC-4D69-93B9-1614C3D3DCDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{136C7489-11BC-4D69-93B9-1614C3D3DCDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{136C7489-11BC-4D69-93B9-1614C3D3DCDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0602015-3537-4845-B201-7C4B2C03AECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0602015-3537-4845-B201-7C4B2C03AECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0602015-3537-4845-B201-7C4B2C03AECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0602015-3537-4845-B201-7C4B2C03AECC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

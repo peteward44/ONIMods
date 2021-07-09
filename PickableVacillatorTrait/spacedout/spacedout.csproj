@@ -7,8 +7,8 @@
     <ProjectGuid>{8E64342A-9354-4A75-8119-B861A8BDA10A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WildPlanterBox</RootNamespace>
-    <AssemblyName>WildPlanterBox</AssemblyName>
+    <RootNamespace>PickableVacillatorTrait</RootNamespace>
+    <AssemblyName>PickableVacillatorTrait</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\common\dlls\spacedout\0Harmony.dll</HintPath>
@@ -41,17 +44,35 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>..\..\common\dlls\spacedout\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\common\dlls\spacedout\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\common\dlls\spacedout\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\common\dlls\spacedout\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\common\dlls\spacedout\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\common\dlls\spacedout\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\common\dlls\spacedout\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\common\dlls\spacedout\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\common\dlls\spacedout\UnityEngine.UIModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -59,11 +80,16 @@
     <Compile Include="src\Patches.cs" />
     <Compile Include="src\PickVacillatorTraitScreen.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\PLib\PLib.csproj">
+      <Project>{a0602015-3537-4845-b201-7c4b2c03aecc}</Project>
+      <Name>PLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>call "$(SolutionDir)..\common\post-build.cmd" "$(SolutionDir)" "$(ProjectDir)" "$(TargetPath)"
-call "$(SolutionDir)..\common\deploy.cmd" "$(SolutionName)" "$(SolutionDir)" "$(ProjectDir)" "$(TargetPath)"
+    <PostBuildEvent>call "$(SolutionDir)..\common\post-build.cmd" "$(SolutionDir)" "$(ProjectDir)" "$(TargetDir)" "$(TargetName)"
+call "$(SolutionDir)..\common\deploy.cmd" "$(SolutionName)" "$(SolutionDir)" "$(ProjectDir)" "$(TargetDir)" "$(TargetName)"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
