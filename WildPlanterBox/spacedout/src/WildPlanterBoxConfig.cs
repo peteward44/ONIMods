@@ -29,6 +29,11 @@ public class WildPlanterBoxConfig : IBuildingConfig
 	{
 		Storage storage = go.AddOrGet<Storage>();
 		PlantablePlot plantablePlot = go.AddOrGet<PlantablePlot>();
+
+		// turn off irrigation
+		FieldInfo fi = typeof(PlantablePlot).GetField("accepts_irrigation", BindingFlags.NonPublic | BindingFlags.Instance);
+		fi.SetValue(plantablePlot, false);
+
 		plantablePlot.AddDepositTag(GameTags.CropSeed);
 		plantablePlot.SetFertilizationFlags(fertilizer: false, liquid_piping: false);
 		CopyBuildingSettings copyBuildingSettings = go.AddOrGet<CopyBuildingSettings>();
@@ -39,10 +44,6 @@ public class WildPlanterBoxConfig : IBuildingConfig
 		go.AddOrGet<WildPlanterBox>();
 		go.AddOrGet<AnimTileable>();
 		Prioritizable.AddRef(go);
-
-		// turn off irrigation
-		FieldInfo fi = typeof(PlantablePlot).GetField("accepts_irrigation", BindingFlags.NonPublic | BindingFlags.Instance);
-		fi.SetValue(plantablePlot, false);
 	}
 
 	public override void DoPostConfigureComplete(GameObject go)

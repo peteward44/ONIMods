@@ -1,8 +1,9 @@
 ﻿
-using Harmony;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 
@@ -59,8 +60,7 @@ public static class Patches
 		(TUNING.BUILDINGS.PLANORDER[categoryIndex].data as IList<String>)?.Add(ID);
 	}
 
-	[HarmonyPatch(typeof(GeneratedBuildings))]
-	[HarmonyPatch("LoadGeneratedBuildings")]
+	[HarmonyPatch(typeof(GeneratedBuildings), "LoadGeneratedBuildings")]
 	public static class GeneratedBuildings_LoadGeneratedBuildings_Patch
 	{
 		public static void OnLoad()
@@ -92,5 +92,30 @@ public static class Patches
 			Db.Get().Techs.Get("Agriculture").unlockedItemIDs.Add(WildFarmTileConfig.ID);
 		}
 	}
+
+
+	[HarmonyPatch(typeof(ReceptacleMonitor), "SetReceptacle")]
+	public static class ReceptacleMonitor_SetReceptacle
+	{
+		public static void Postfix(ReceptacleMonitor __instance)
+		{
+			// force plants put in the wild receptacles to be wild
+			var plantablePlot = __instance.GetReceptacle();
+			if (plantablePlot && !plantablePlot.AcceptsIrrigation)
+			{
+				FieldInfo fi = typeof(ReceptacleMonitor).GetField("replanted", BindingFlags.NonPublic | BindingFlags.Instance);
+				fi.SetValue(__instance, false);
+			}
+		}
+	}
 }
 
+
+public class MyMod : KMod.UserMod2
+{
+	public override void OnLoad(Harmony harmony)
+	{
+		Patches.GeneratedBuildings_LoadGeneratedBuildings_Patch.OnLoad();
+		harmony.PatchAll();
+	}
+}
