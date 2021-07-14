@@ -1,6 +1,6 @@
 **Now compatible with "Big Merge" Update!**
 
-Adds a new planter box that simulates wild conditions. Any plants planted in these boxes do not need fertilization and will contribute to the wild plant count for parks and nature reserves.
+Adds a new wild planter box and wild farm tile that simulates wild conditions. Any plants planted in these boxes do not need fertilization nor irrigation and will contribute to the wild plant count for parks and nature reserves. Plants grow at normal wild speed.
 
 For balance, they require a [b]30w[/b] power supply and emit [b]250 DTU/s[/b] (about half of what a ceiling light emits)
 
