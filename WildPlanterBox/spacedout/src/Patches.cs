@@ -113,9 +113,14 @@ public static class Patches
 
 public class MyMod : KMod.UserMod2
 {
-	public override void OnLoad(Harmony harmony)
+    public static ConfigManager<Config> ConfigManager;
+
+    public override void OnLoad(Harmony harmony)
 	{
-		Patches.GeneratedBuildings_LoadGeneratedBuildings_Patch.OnLoad();
+        ConfigManager = new ConfigManager<Config>(mod);
+        ConfigManager.ReadConfig();
+
+        Patches.GeneratedBuildings_LoadGeneratedBuildings_Patch.OnLoad();
 		harmony.PatchAll();
 	}
 }

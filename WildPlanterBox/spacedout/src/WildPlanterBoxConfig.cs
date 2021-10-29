@@ -18,9 +18,13 @@ public class WildPlanterBoxConfig : IBuildingConfig
 		buildingDef.AudioCategory = "Glass";
 		buildingDef.AudioSize = "large";
 
-		buildingDef.RequiresPowerInput = true;
-		buildingDef.EnergyConsumptionWhenActive = 30f;
-		buildingDef.SelfHeatKilowattsWhenActive = 0.25f;
+        float power = MyMod.ConfigManager.Config.PowerConsumption;
+        if (power > 0)
+        {
+            buildingDef.RequiresPowerInput = true;
+            buildingDef.EnergyConsumptionWhenActive = power;
+        }
+		buildingDef.SelfHeatKilowattsWhenActive = MyMod.ConfigManager.Config.HeatOutput;
 
 		return buildingDef;
 	}

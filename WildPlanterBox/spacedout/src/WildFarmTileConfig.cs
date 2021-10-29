@@ -28,11 +28,15 @@ public class WildFarmTileConfig : IBuildingConfig
 		buildingDef.isSolidTile = false;
 		buildingDef.DragBuild = true;
 
-		buildingDef.RequiresPowerInput = true;
-		buildingDef.EnergyConsumptionWhenActive = 30f;
-		buildingDef.SelfHeatKilowattsWhenActive = 0.25f;
+        float power = MyMod.ConfigManager.Config.PowerConsumption;
+        if (power > 0)
+        {
+            buildingDef.RequiresPowerInput = true;
+            buildingDef.EnergyConsumptionWhenActive = power;
+        }
+        buildingDef.SelfHeatKilowattsWhenActive = MyMod.ConfigManager.Config.HeatOutput;
 
-		return buildingDef;
+        return buildingDef;
 	}
 
 	public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
