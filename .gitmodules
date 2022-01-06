@@ -1,0 +1,3 @@
+[submodule "plib"]
+	path = plib
+	url = https://github.com/peterhaneve/ONIMods.git
