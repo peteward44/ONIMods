@@ -4,8 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
+using PeterHan.PLib.Core;
+using PeterHan.PLib.Database;
+using PeterHan.PLib.Options;
+using PeterHan.PLib.PatchManager;
+using PeterHan.PLib.UI;
 
 
 public static class Patches
@@ -115,7 +119,11 @@ public class MyMod : KMod.UserMod2
 {
     public override void OnLoad(Harmony harmony)
 	{
-        Patches.GeneratedBuildings_LoadGeneratedBuildings_Patch.OnLoad();
-		harmony.PatchAll();
+		base.OnLoad(harmony);
+		PUtil.InitLibrary();
+		//new PLocalization().Register();
+		new POptions().RegisterOptions(this, typeof(WildPlanterBoxOptions));
+		new PPatchManager(harmony).RegisterPatchClass(typeof(MyMod));
+		Patches.GeneratedBuildings_LoadGeneratedBuildings_Patch.OnLoad();
 	}
 }
