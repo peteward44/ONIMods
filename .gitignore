@@ -1,5 +1,5 @@
-*/.vs
-*/project/bin
-*/project/obj
-*/release
-*/packages
+.vs
+*/*/project/bin
+*/*/project/obj
+/release
+*/*/packages

@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#.  PW.WildFarmTileConfig.ID
+msgctxt "PW.WildFarmTileConfig.ID"
+msgid "WildFarmTile"
+msgstr "人工野生土培砖"
+
+#.  PW.WildFarmTileConfig.Name
+msgctxt "PW.WildFarmTileConfig.Name"
+msgid "Wild Farm Tile"
+msgstr "人工野生土培砖"
+
+#.  PW.WildFarmTileConfig.Description
+msgctxt "PW.WildFarmTileConfig.Description"
+msgid "Tile that simulates wild conditions for plants"
+msgstr "模拟植物野生条件的土培砖"
+
+#.  PW.WildFarmTileConfig.Effect
+msgctxt "PW.WildFarmTileConfig.Effect"
+msgid "Allows duplicants to plant a wild plant from a seed"
+msgstr "允许复制人用种子种植野生植物"
+
+#.  PW.WildPlanterBoxConfig.ID
+msgctxt "PW.WildPlanterBoxConfig.ID"
+msgid "WildFarmTile"
+msgstr "人工野生土培砖"
+
+#.  PW.WildPlanterBoxConfig.Name
+msgctxt "PW.WildPlanterBoxConfig.Name"
+msgid "Wild Planter Box"
+msgstr "人工野生土培砖"
+
+#.  PW.WildPlanterBoxConfig.Description
+msgctxt "PW.WildPlanterBoxConfig.Description"
+msgid "Box that simulates wild conditions for plants"
+msgstr "模拟植物野生条件的土培砖"
+
+#.  PW.WildPlanterBoxConfig.Effect
+msgctxt "PW.WildPlanterBoxConfig.Effect"
+msgid "Allows duplicants to plant a wild plant from a seed"
+msgstr "允许复制人用种子种植野生植物"

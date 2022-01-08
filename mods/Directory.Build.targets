@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <Target Name="ClearGameFolderCopyLocal" AfterTargets="ResolveAssemblyReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="$(GameFolder)\*" />
+    </ItemGroup>
+  </Target>
+  <Target Name="ILRepack" AfterTargets="Build">
+    <ItemGroup>
+      <InputAssemblies Include="$(TargetDir)PLib*.dll" />
+    </ItemGroup>
+    <ILRepack TargetPlatformVersion="v4" OutputType="SameAsPrimaryAssembly" MainAssembly="$(TargetPath)" OutputAssembly="$(TargetPath)" InputAssemblies="@(InputAssemblies)" XmlDocumentation="true" Internalize="true" WilcardInputAssemblies="true" WorkingDirectory="$(GameFolder)" />
+  </Target>
+  <Target Name="CopyArtifactsToInstallFolder" AfterTargets="ILRepack">
+    <ItemGroup>
+      <CopyThisFolder Include="$(ProjectDir)\..\target\**\*.*" />
+    </ItemGroup>
+    <message text="Creating 'release' folder" />
+    <Copy SourceFiles="@(CopyThisFolder)" DestinationFolder="$(RootReleaseFolder)\$(ProjectName)\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="300" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(RootReleaseFolder)\$(ProjectName)" />
+	<Copy SourceFiles="$(ProjectDir)\..\README.md" DestinationFolder="$(RootReleaseFolder)\$(ProjectName)" />
+	<Copy SourceFiles="$(ProjectDir)\..\assets\preview.png" DestinationFolder="$(RootReleaseFolder)\$(ProjectName)" />
+  </Target>
+  <Target Name="CopyReleaseToModsUserDataFolder" AfterTargets="CopyArtifactsToInstallFolder">
+    <ItemGroup>
+      <CopyThisFolder Include="$(RootReleaseFolder)\$(ProjectName)\**\*.*" />
+    </ItemGroup>
+    <message text="Copying to dev dir %USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)" />
+    <Copy SourceFiles="@(CopyThisFolder)" DestinationFolder="$(UserProfile)\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="300" />
+  </Target>
+</Project>

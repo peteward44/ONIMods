@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <Import Condition=" !Exists('Directory.Build.props.user') " Project="Directory.Build.props.default" />
+  <Import Condition=" Exists('Directory.Build.props.user') " Project="Directory.Build.props.user" />
+
+  <ItemDefinitionGroup>
+    <Reference Private="False" />
+    <ProjectReference Private="True" />
+  </ItemDefinitionGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ILRepack.MSBuild.Task" Version="2.0.13" Private="True" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony" HintPath="$(GameFolder)/0Harmony.dll" />
+    <Reference Include="Assembly-CSharp" HintPath="$(GameFolder)/Assembly-CSharp.dll" />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(GameFolder)/Assembly-CSharp-firstpass.dll" />
+    <Reference Include="Newtonsoft.Json" HintPath="$(GameFolder)/Newtonsoft.Json.dll" />
+    <Reference Include="UnityEngine" HintPath="$(GameFolder)/UnityEngine.dll" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(GameFolder)/UnityEngine.CoreModule.dll" />
+    <Reference Include="UnityEngine.ImageConversionModule" HintPath="$(GameFolder)/UnityEngine.ImageConversionModule.dll" />
+    <Reference Include="UnityEngine.InputLegacyModule" HintPath="$(GameFolder)/UnityEngine.InputLegacyModule.dll" />
+    <Reference Include="Unity.TextMeshPro" HintPath="$(GameFolder)/Unity.TextMeshPro.dll" />
+    <Reference Include="UnityEngine.TextRenderingModule" HintPath="$(GameFolder)/UnityEngine.TextRenderingModule.dll" />
+    <Reference Include="UnityEngine.UI" HintPath="$(GameFolder)/UnityEngine.UI.dll" />
+    <Reference Include="UnityEngine.UIModule" HintPath="$(GameFolder)/UnityEngine.UIModule.dll" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(UsesPLib)' != 'false' ">
+    <ProjectReference Include="../../../plib/PLibCore/PLibCore.csproj" />
+    <ProjectReference Include="../../../plib/PLibActions/PLibActions.csproj" />
+    <ProjectReference Include="../../../plib/PLibAVC/PLibAVC.csproj" />
+    <ProjectReference Include="../../../plib/PLibBuildings/PLibBuildings.csproj" />
+    <ProjectReference Include="../../../plib/PLibDatabase/PLibDatabase.csproj" />
+    <ProjectReference Include="../../../plib/PLibOptions/PLibOptions.csproj" />
+    <ProjectReference Include="../../../plib/PLibUI/PLibUI.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <Product>PWONIMods</Product>
+    <Authors>Pete Ward</Authors>
+    <Copyright>Copyright ©Pete Ward 2022</Copyright>
+    <TargetFramework>net471</TargetFramework>
+  </PropertyGroup>
+</Project>
