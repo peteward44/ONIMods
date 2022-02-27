@@ -4,7 +4,7 @@
 
 Adds a new wild planter box and wild farm tile that simulates wild conditions. Any plants planted in these boxes do not need fertilization nor irrigation and will contribute to the wild plant count for parks and nature reserves. Plants grow at normal wild speed.
 
-For balance, they require a [b]30w[/b] power supply and emit [b]250 DTU/s[/b] (about half of what a ceiling light emits). These can be configured in the mod menu, just set to zero to switch off power usage / heat output.
+They can be configured in the mod menu to require power / emit heat, if you so desire. The default is zero, which is no power or heat output.
 
 [h2]Base game & DLC support[/h2]
 This mod supports both [b]vanilla base game[/b], the [b]"Spaced Out" DLC[/b].

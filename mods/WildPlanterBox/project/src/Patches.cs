@@ -61,8 +61,7 @@ namespace PW
 			Strings.Add($"STRINGS.BUILDINGS.PREFABS.{ID.ToUpperInvariant()}.DESC", description);
 			Strings.Add($"STRINGS.BUILDINGS.PREFABS.{ID.ToUpperInvariant()}.EFFECT", effect);
 
-			int categoryIndex = TUNING.BUILDINGS.PLANORDER.FindIndex(x => x.category == category);
-			(TUNING.BUILDINGS.PLANORDER[categoryIndex].data as IList<String>)?.Add(ID);
+			ModUtil.AddBuildingToPlanScreen(category, ID);
 		}
 
 		[HarmonyPatch(typeof(GeneratedBuildings), "LoadGeneratedBuildings")]
