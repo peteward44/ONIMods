@@ -1,6 +1,4 @@
-**Now compatible with Spaced Out! v1.0!**
-**Now includes in-game configuration**
-**Also has Chinese translation!**
+** Works with Feb 25th Update **
 
 Adds a new wild planter box and wild farm tile that simulates wild conditions. Any plants planted in these boxes do not need fertilization nor irrigation and will contribute to the wild plant count for parks and nature reserves. Plants grow at normal wild speed.
 
