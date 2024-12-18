@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
+    <!-- Root steam folder -->
     <SteamFolder>C:\Program Files (x86)\Steam</SteamFolder>
-    <GameFolder>$(SteamFolder)\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed</GameFolder>
-    <ModFolder>$(UserProfile)\Documents\Klei\OxygenNotIncluded\mods\dev</ModFolder>
+    <!-- Directory where game's steamapp data is stored -->
+	<GameFolder>D:\SteamLibrary\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed</GameFolder>
+    <!-- Directory relative to the users' "My Documents" folder where dev mods should be installed -->
+	<DevModDocumentsFolder>Klei\OxygenNotIncluded\mods\dev</DevModDocumentsFolder>
+	<!-- Root directory to store release builds -->
 	<RootReleaseFolder>$(ProjectDir)..\..\..\release\</RootReleaseFolder>
   </PropertyGroup>
 </Project>

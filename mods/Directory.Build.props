@@ -39,5 +39,6 @@
     <Authors>Pete Ward</Authors>
     <Copyright>Copyright ©Pete Ward 2022</Copyright>
     <TargetFramework>net471</TargetFramework>
+	<UserDocumentsFolder>$([System.Environment]::GetFolderPath(SpecialFolder.MyDocuments))</UserDocumentsFolder>
   </PropertyGroup>
 </Project>

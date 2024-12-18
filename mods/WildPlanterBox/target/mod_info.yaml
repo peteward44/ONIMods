@@ -1,6 +1,6 @@
 # either or both of VANILLA_ID, EXPANSION1_ID, ALL
 supportedContent: VANILLA_ID, EXPANSION1_ID
 # The build number of the last version of the game you tested your mod with
-minimumSupportedBuild: 526946
+minimumSupportedBuild: 647408
 APIVersion: 2
-version: "4.0.2"
+version: "4.0.3"

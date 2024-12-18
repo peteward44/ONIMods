@@ -9,6 +9,7 @@
     <ItemGroup>
       <InputAssemblies Include="$(TargetDir)PLib*.dll" />
     </ItemGroup>
+    <message text="Executing ILRepack.." />
     <ILRepack TargetPlatformVersion="v4" OutputType="SameAsPrimaryAssembly" MainAssembly="$(TargetPath)" OutputAssembly="$(TargetPath)" InputAssemblies="@(InputAssemblies)" XmlDocumentation="true" Internalize="true" WilcardInputAssemblies="true" WorkingDirectory="$(GameFolder)" />
   </Target>
   <Target Name="CopyArtifactsToInstallFolder" AfterTargets="ILRepack">
@@ -25,7 +26,7 @@
     <ItemGroup>
       <CopyThisFolder Include="$(RootReleaseFolder)\$(ProjectName)\**\*.*" />
     </ItemGroup>
-    <message text="Copying to dev dir %USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)" />
-    <Copy SourceFiles="@(CopyThisFolder)" DestinationFolder="$(UserProfile)\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="300" />
+		<message Importance="High" text="Copying to dev dir $(UserDocumentsFolder)\$(DevModDocumentsFolder)\$(ProjectName)" />
+    <Copy SourceFiles="@(CopyThisFolder)" DestinationFolder="$(UserDocumentsFolder)\$(DevModDocumentsFolder)\$(ProjectName)\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="300" />
   </Target>
 </Project>
